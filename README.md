@@ -32,6 +32,22 @@ In the project I'm using File Scoped Namespaces introduced in C#10. Namesapces a
 For better code readability I prefer to stick with a rule of lines no longer than 80 characters. It is not a set in stone value, but I try to fallow it if possible.
 To setup a guideline I recommend Visual Studio extension Editor Guidelines by Paul Harrington.
 
+### Test run settings
+To configure test enviroment in Visual Studio you can add test.runsettings file into your solution. For example, configuration setting playwright to run in HEADED mode (with a browser visible) you can use this configuration.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <HEADED>1</HEADED>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
+```
+
+If Visual Studio doesn't detect your configuration automatically go to **Test** -> **Configure Run Settings** -> **Select Solution Wide runsettings file** and choose your file manually.
+
 ## Guides
 
 As I'm learning Playwright and good testing practices I'll be descrabing it all in this readme. I hope it will serve as a fast start for people wanting to get into automation or as a good quick refresher for me from the future. When studying Playwright I'm using mix of [Official Documentation](https://playwright.dev/dotnet/docs/intro), Stackoverflow, ChatGpt, Youtube. If a concept is unclear to you I suggest you try to find answers there. Starting a discussion in the Issues tab is always welcome aswell.
