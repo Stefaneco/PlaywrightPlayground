@@ -13,9 +13,9 @@ internal class AddRemoveTests : PageTest
     private AddRemovePage page;
 
     [SetUp]
-    public void SetUp()
+    public async Task SetUp()
     {
-        Page.GotoAsync("https://the-internet.herokuapp.com/add_remove_elements/");
+        await Page.GotoAsync("https://the-internet.herokuapp.com/add_remove_elements/");
         page = new AddRemovePage(Page);
     }
 
