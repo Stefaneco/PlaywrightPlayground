@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
+using PlaywrightPlayground.Base;
 using PlaywrightPlayground.TheInternet.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PlaywrightPlayground.TheInternet.Tests;
-internal class AddRemoveTests : PageTest
+internal class AddRemoveTests : BaseTest
 {
     private AddRemovePage page;
 
     [SetUp]
-    public void SetUp()
+    public async Task SetUp()
     {
-        Page.GotoAsync("https://the-internet.herokuapp.com/add_remove_elements/");
+        await Page.GotoAsync("https://the-internet.herokuapp.com/add_remove_elements/");
         page = new AddRemovePage(Page);
     }
 
