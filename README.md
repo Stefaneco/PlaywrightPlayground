@@ -113,6 +113,13 @@ internal class AddRemovePage : BasePage
     }
 }
 ```
+### Getting property of the element with Playwright
+
+If you come from a selenium background your first instinct for getting a property of the element might be using the *GetAttributeAsync* method. It however won't get you any properties. For that you should use *EvaluateAsync<string>* such as:
+
+```cs
+    var propertyValue = await image(index).EvaluateAsync<string>($"element => element.{propertyName}");
+```
 
 ## Contributions
 
