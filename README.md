@@ -121,6 +121,39 @@ If you come from a selenium background your first instinct for getting a propert
     var propertyValue = await image(index).EvaluateAsync<string>($"element => element.{propertyName}");
 ```
 
+### Screenshot on failure
+
+For additional information about the failure we can instruct Playwright to take a screenshot. To achive that we can use TearDown method in a BaseTest class.
+
+```cs
+[TearDown]
+public async Task TearDown()
+{
+    if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+    {
+        var testName = TestContext.CurrentContext.Test.MethodName ?? "MISSING_TEST_NAME";
+        var screenshotName = testName + "_" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".png";
+        await Page.ScreenshotAsync(new()
+        {
+            Path = Path.Combine(Globals.GetScreenshotFolderPath(), screenshotName),
+            FullPage = true
+        });
+    }
+}
+```
+
+First we check if the test failed. If so, we get the test method name (you can also use TestName if you have one), we add the DateTime and use ScreenshotAsync to take a screenshot.
+To make sure the tests run on different machines we generate the screenshot folder path using a static method that generates the path based on Environment.CurrentDirectory.
+
+```cs
+public static string GetScreenshotFolderPath()
+{
+    var workingDirectory = Environment.CurrentDirectory;
+    var parentPath = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+    return Path.Combine(parentPath, "Screenshots" );
+}
+```
+
 ## Contributions
 
 Your suggestions and contributions are always welcome! If you know of any good sites that offer QA or automation exercises, or if you have any general suggestions, don't hesitate to let me know. 
