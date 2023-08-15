@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright.NUnit;
+using PlaywrightPlayground.Base;
 using PlaywrightPlayground.TheInternet.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PlaywrightPlayground.TheInternet.Tests;
-internal class BrokenImagesTests : PageTest
+internal class BrokenImagesTests : BaseTest
 {
     private BrokenImagesPage page;
     

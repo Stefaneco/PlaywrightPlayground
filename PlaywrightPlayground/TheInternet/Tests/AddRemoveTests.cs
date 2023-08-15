@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
+using PlaywrightPlayground.Base;
 using PlaywrightPlayground.TheInternet.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PlaywrightPlayground.TheInternet.Tests;
-internal class AddRemoveTests : PageTest
+internal class AddRemoveTests : BaseTest
 {
     private AddRemovePage page;
 
