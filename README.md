@@ -8,8 +8,19 @@ I welcome any alternative solutions, questions, or general feedback you may have
 
 ## Table of contents
 
+- [Visual Studio Tips](#visual-studio-tips)
+  * [Item templates](#item-templates)
+  * [Namespace declarations](#namespace-declarations)
+  * [Line length guideline](#line-length-guideline)
+  * [Test run settings](#test-run-settings)
+- [Guides](#guides)
+  * [What to know before starting with this guide](#what-to-know-before-starting-with-this-guide)
+  * [Codegen](#codegen)
+  * [Page Object Models](#page-object-models)
+  * [Getting property of the element with Playwright](#getting-property-of-the-element-with-playwright)
+  * [Screenshot on failure](#screenshot-on-failure)
 - [Contributions](#contributions)
-- ...
+- [Acknowledgements](#acknowledgements)
 
 ## Visual Studio Tips
 Before starting coding it is good to have your IDE setup to fit your preferences and the project you will be working on. In this section I'll describe how I've prepared my IDE to optimize my workflow.
